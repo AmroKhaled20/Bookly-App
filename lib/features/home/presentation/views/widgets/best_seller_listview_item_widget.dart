@@ -2,6 +2,7 @@ import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BestSellerListviewItemWidget extends StatelessWidget {
   const BestSellerListviewItemWidget({super.key});
@@ -15,7 +16,7 @@ class BestSellerListviewItemWidget extends StatelessWidget {
         child: Row(
           children: [
             Image.asset(Assets.testImage),
-            const SizedBox(width: 5),
+            const SizedBox(width: 20),
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,12 +38,18 @@ class BestSellerListviewItemWidget extends StatelessWidget {
                   Row(
                     children: [
                       Text(
-                        'Free',
+                        '19.99 €',
                         style: Styles.textStyle20.copyWith(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       const Spacer(),
+                      const Icon(
+                        FontAwesomeIcons.solidStar,
+                        color: Color(0xffFFDD4F),
+                      ),
+                      const SizedBox(width: 10),
+
                       const Text('4.7'),
                     ],
                   ),
