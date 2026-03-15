@@ -1,5 +1,5 @@
 import 'package:bookly/features/home/presentation/views/widgets/custom_bar_widget.dart';
-import 'package:bookly/features/home/presentation/views/widgets/custom_list_view_card_widget.dart';
+import 'package:bookly/features/home/presentation/views/widgets/custom_featuredlistview_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -11,8 +11,8 @@ class HomeViewBody extends StatelessWidget {
       child: Column(
         children: [
           CustomBarWidget(icon: Icons.search),
-          const SizedBox(height: 10),
-          CustomListViewCardWidget(),
+          const SizedBox(height: 25),
+          const CustomFeaturedlistviewWidget(),
         ],
       ),
     );
