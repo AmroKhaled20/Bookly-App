@@ -1,8 +1,10 @@
 import 'package:bookly/constants.dart';
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 
 class BestSellerListviewItemWidget extends StatelessWidget {
   const BestSellerListviewItemWidget({super.key});
@@ -10,7 +12,9 @@ class BestSellerListviewItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        GoRouter.of(context).push(AppRouter.kBookViewDetails);
+      },
       child: SizedBox(
         height: 130,
         child: Row(
