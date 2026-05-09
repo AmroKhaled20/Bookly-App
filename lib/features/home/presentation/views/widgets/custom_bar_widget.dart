@@ -24,11 +24,7 @@ class CustomBarWidget extends StatelessWidget {
         children: [
           Image.asset(Assets.logo, scale: 2),
 
-          CustomIconhWidget(
-            icon: icon,
-            iconColor: colorr,
-            onPressed: onPressed,
-          ),
+          CustomIconhWidget(icon: icon, iconColor: colorr),
         ],
       ),
     );

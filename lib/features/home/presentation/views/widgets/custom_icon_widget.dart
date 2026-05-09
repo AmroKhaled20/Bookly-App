@@ -1,15 +1,16 @@
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CustomIconhWidget extends StatelessWidget {
   const CustomIconhWidget({
     super.key,
     required this.icon,
     this.iconColor = Colors.white,
-    this.onPressed,
   });
   final IconData icon;
   final Color? iconColor;
-  final void Function()? onPressed;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,7 +19,9 @@ class CustomIconhWidget extends StatelessWidget {
         color: Colors.white.withValues(alpha: 0.3),
       ),
       child: IconButton(
-        onPressed: onPressed,
+        onPressed: () {
+          GoRouter.of(context).push(AppRouter.kSearchView);
+        },
         icon: Icon(icon, size: 28, color: iconColor),
       ),
     );
