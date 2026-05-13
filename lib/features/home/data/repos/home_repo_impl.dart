@@ -37,16 +37,24 @@ class HomeRepoImpl extends HomeRepo {
       var data = await apiServices.get(
         endPoint: 'volumes?Filtering=free-ebooks&q=subject:Programming',
       );
+
       List<BookModel> books = [];
+
       for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
       }
 
       return right(books);
-    } catch (e) {
+    } catch (e, stackTrace) {
+      print('================ ERROR ================');
+      print(e);
+      print('============= STACK TRACE =============');
+      print(stackTrace);
+
       if (e is DioException) {
         return left(ServerFailure.fromDioException(e));
       }
+
       return left(ServerFailure(e.toString()));
     }
   }

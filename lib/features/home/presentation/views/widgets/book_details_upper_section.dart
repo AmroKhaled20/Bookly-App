@@ -1,4 +1,5 @@
 import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_action.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly/features/home/presentation/views/widgets/custom_book_details_app_bar.dart';
@@ -6,8 +7,8 @@ import 'package:bookly/features/home/presentation/views/widgets/custom_book_imag
 import 'package:flutter/material.dart';
 
 class BookDetailsUpperSection extends StatelessWidget {
-  const BookDetailsUpperSection({super.key});
-
+  const BookDetailsUpperSection({super.key, required this.book});
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -17,7 +18,9 @@ class BookDetailsUpperSection extends StatelessWidget {
         const CustomBookDetailsAppBar(),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .15),
-          child: const CustomBookImage(),
+          child: CustomBookImage(
+            imageUrl: book.volumeInfo.imageLinks.thumbnail,
+          ),
         ),
         const SizedBox(height: 2),
         Text(
